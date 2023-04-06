@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ProductItem = ({ product }) => {
   return (
-    <div className="flex flex-col gap-3 w-96 border-b pb-3">
+    <div className="flex flex-col gap-3 w-[20rem] border-b pb-3">
       <Image
         priority
         unoptimized
@@ -13,7 +13,7 @@ const ProductItem = ({ product }) => {
         width={500}
         height={500}
         alt={product.title}
-        className="w-auto h-auto"
+        className="w-auto h-full object-cover"
       />
       <span className="uppercase text-xs tracking-widest font-semibold">
         {product.category}
