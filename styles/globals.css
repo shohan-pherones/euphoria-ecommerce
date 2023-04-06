@@ -31,3 +31,7 @@
 .slide {
   @apply w-screen h-full bg-center bg-no-repeat bg-cover;
 }
+
+.section-title {
+  @apply text-5xl uppercase font-thin;
+}
