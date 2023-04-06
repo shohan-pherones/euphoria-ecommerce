@@ -15,3 +15,19 @@
 .counting-bubble {
   @apply absolute -right-2 -bottom-1 bg-black w-4 h-4 rounded-full flex justify-center items-center text-white text-xs;
 }
+
+.slider {
+  @apply h-[calc(100vh-5rem)] flex duration-1000;
+}
+
+.navigators {
+  @apply absolute left-0 right-0 bottom-20 m-auto w-fit z-[1] text-2xl flex gap-10;
+}
+
+.navigators-btn {
+  @apply h-14 w-20 flex justify-center items-center bg-rose-900 text-rose-200 border border-rose-200 hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300;
+}
+
+.slide {
+  @apply w-screen h-full bg-center bg-no-repeat bg-cover;
+}

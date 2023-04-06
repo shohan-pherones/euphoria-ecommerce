@@ -3,7 +3,7 @@ import { BsBag, BsHeart } from "react-icons/bs";
 
 const Navbar = () => {
   return (
-    <header className="wrapper flex justify-between items-center h-20 border-b">
+    <header className="wrapper flex justify-between items-center h-20">
       <div className="logo">
         <Link href="/" className="text-2xl font-semibold">
           euphoria.
