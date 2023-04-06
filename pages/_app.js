@@ -1,5 +1,30 @@
-import '@/styles/globals.css'
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Head from "next/head";
+import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Head>
+        <title>Euphoria - Shop Trendy and Affordable Clothing Online</title>
+        <meta
+          name="description"
+          content="Euphoria is your destination for affordable and fashionable clothing online. Browse our collection of trendy women's and men's clothing today!"
+        />
+        <meta
+          name="keywords"
+          content="Euphoria, clothing, fashion, online shopping, women's clothing, men's clothing"
+        />
+        <meta name="author" content="Euphoria Clothing Co." />
+        <meta name="robots" content="index, follow" />
+        <meta http-equiv="refresh" content="60" />
+        <link rel="canonical" href="https://www.euphoria.com/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <Navbar />
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  );
 }

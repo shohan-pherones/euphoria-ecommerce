@@ -3,3 +3,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.wrapper {
+  @apply container mx-auto px-5 lg:px-0;
+}
+
+.linear-walkaways {
+  @apply relative before:absolute before:top-1/2 before:left-0 before:w-0 before:h-[1px] before:bg-rose-500 hover:before:w-full before:duration-300;
+}
+
+.counting-bubble {
+  @apply absolute -right-2 -bottom-1 bg-black w-4 h-4 rounded-full flex justify-center items-center text-white text-xs;
+}
