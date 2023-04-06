@@ -18,9 +18,7 @@ export default function App({ Component, pageProps }) {
         />
         <meta name="author" content="Euphoria Clothing Co." />
         <meta name="robots" content="index, follow" />
-        <meta http-equiv="refresh" content="60" />
         <link rel="canonical" href="https://www.euphoria.com/" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Navbar />
       <Component {...pageProps} />
