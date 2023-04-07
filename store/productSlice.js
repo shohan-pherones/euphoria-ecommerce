@@ -1,15 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  products: localStorage.getItem("products")
-    ? JSON.parse(localStorage.getItem("products"))
-    : [],
+  products: [],
 };
 
 export const productSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    addToCart: (state, action) => {
+      const item = state.products.find(
+        (product) => product.id === action.payload.id
+      );
+
+      if (item) {
+        item.quantity += action.payload.quantity;
+      } else {
+        state.products.push(action.payload);
+      }
+    },
+  },
 });
 
-export const {} = productSlice.actions;
+export const { addToCart } = productSlice.actions;

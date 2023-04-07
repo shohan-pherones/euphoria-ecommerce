@@ -1,9 +1,24 @@
+import { useCallback, useState } from "react";
 import { getProduct } from "@/prisma/products";
+import { addToCart } from "@/store/productSlice";
+import { useDispatch } from "react-redux";
 import { formatCurrency } from "@/utils/formatCurrency";
 import Image from "next/image";
 import Link from "next/link";
 
 const ProductDetails = ({ product }) => {
+  const [quantity, setQuantity] = useState(1);
+
+  const handleDecrease = useCallback(() => {
+    setQuantity(quantity === 1 ? 1 : (prev) => prev - 1);
+  }, [quantity]);
+
+  const handleIncrease = useCallback(() => {
+    setQuantity((prev) => prev + 1);
+  }, []);
+
+  const dispatch = useDispatch();
+
   return (
     <div className="wrapper my-10 grid lg:grid-cols-2 gap-10">
       <Image
@@ -27,18 +42,25 @@ const ProductDetails = ({ product }) => {
             {formatCurrency(product.price)}
           </p>
           <div className="counter flex items-center bg-gray-100 text-2xl">
-            <button className="bg-gray-700 text-white h-10 w-10 flex items-center justify-center hover:bg-cyan-500 duration-300">
+            <button
+              onClick={handleDecrease}
+              className="bg-gray-700 text-white h-10 w-10 flex items-center justify-center hover:bg-cyan-500 duration-300"
+            >
               -
             </button>
             <span className="h-10 w-10 flex items-center justify-center">
-              5
+              {quantity}
             </span>
-            <button className="bg-gray-700 text-white h-10 w-10 flex items-center justify-center hover:bg-cyan-500 duration-300">
+            <button
+              onClick={handleIncrease}
+              className="bg-gray-700 text-white h-10 w-10 flex items-center justify-center hover:bg-cyan-500 duration-300"
+            >
               +
             </button>
           </div>
         </div>
         <Link
+          onClick={() => dispatch(addToCart({ ...product, quantity }))}
           href="/"
           className="bg-cyan-500 text-center py-3 text-white text-xl font-medium hover:bg-cyan-600 duration-300 mt-5"
         >
