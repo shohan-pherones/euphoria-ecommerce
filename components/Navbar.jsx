@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { BsBag, BsHeart } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const { products } = useSelector((state) => state.products);
+
   return (
     <header className="wrapper flex justify-between items-center h-20">
       <div className="logo">
@@ -46,11 +49,11 @@ const Navbar = () => {
           <span>
             <BsBag />
           </span>
-          <span className="counting-bubble">5</span>
+          <span className="counting-bubble">{products.length}</span>
         </button>
         <button className="relative">
           <BsHeart />
-          <span className="counting-bubble">5</span>
+          <span className="counting-bubble">0</span>
         </button>
       </div>
     </header>
