@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ProductItem = ({ product }) => {
   return (
-    <div className="flex flex-col gap-3 w-[20rem] border-b pb-3">
+    <div className="flex flex-col gap-3 w-full md:w-[20rem] border-b pb-3">
       <Image
         priority
         unoptimized
@@ -13,13 +13,15 @@ const ProductItem = ({ product }) => {
         width={500}
         height={500}
         alt={product.title}
-        className="w-auto h-full object-cover"
+        className="w-auto h-[30rem] object-cover"
       />
       <span className="uppercase text-xs tracking-widest font-semibold">
         {product.category}
       </span>
-      <h3 className="text-2xl font-light">{product.title}</h3>
-      <p className="text-gray-400">{product.description.split(".")[0]}.</p>
+      <h3 className="text-2xl font-ligh h-[4rem]">{product.title}</h3>
+      <p className="text-gray-500 h-[5rem]">
+        {product.description.split(".")[0]}.
+      </p>
       <div className="flex justify-between items-center">
         <p className="text-rose-500 font-medium">
           {formatCurrency(product.price)}
