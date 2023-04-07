@@ -61,7 +61,7 @@ const ProductDetails = ({ product }) => {
         </div>
         <Link
           onClick={() => dispatch(addToCart({ ...product, quantity }))}
-          href="/"
+          href="/cart"
           className="bg-cyan-500 text-center py-3 text-white text-xl font-medium hover:bg-cyan-600 duration-300 mt-5"
         >
           Add to Cart
