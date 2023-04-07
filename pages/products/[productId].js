@@ -44,7 +44,10 @@ const ProductDetails = ({ product }) => {
         >
           Add to Cart
         </Link>
-        <p className="text-gray-500 mt-5">{product.description}</p>
+        <div className="mt-5">
+          <p className="font-medium mb-3">Description:</p>
+          <p className="text-gray-500">{product.description}</p>
+        </div>
       </div>
     </div>
   );

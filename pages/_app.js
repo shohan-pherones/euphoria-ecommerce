@@ -2,6 +2,8 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
 import "@/styles/globals.css";
+import { Provider } from "react-redux";
+import store from "@/store";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -20,9 +22,11 @@ export default function App({ Component, pageProps }) {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.euphoria.com/" />
       </Head>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <Provider store={store}>
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </Provider>
     </>
   );
 }
