@@ -44,7 +44,7 @@ Euphoria E-commerce is built on a powerful technology stack that includes the fo
 
 To install Euphoria E-commerce, follow these simple steps:
 
-1. Clone the repository using `git clone https://github.com/shohan-pherones/euphoria.git`
+1. Clone the repository using `git clone https://github.com/shohan-pherones/euphoria-ecommerce.git`
 2. Install the required dependencies by running `npm install` or `npm i`.
 3. Create a `.env` file in the root directory and add the following variables:
    - `DATABASE_URL`
