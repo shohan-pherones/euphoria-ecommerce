@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BsBag, BsHeart } from "react-icons/bs";
+import { BsBag } from "react-icons/bs";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
@@ -53,24 +53,16 @@ const Navbar = () => {
         </ul>
       </nav>
 
-      <div className="nav-btns flex gap-5">
-        <button className="uppercase linear-walkaways">Sign in</button>
+      <div className="nav-links-right flex gap-5">
+        <Link href="/login" className="uppercase linear-walkaways">
+          Sign in
+        </Link>
         <Link href="/cart" className="relative">
           <span>
             <BsBag />
           </span>
           <span className="counting-bubble">{products.length}</span>
         </Link>
-        {/* <button className="relative">
-          <span>
-            <BsBag />
-          </span>
-          <span className="counting-bubble">{products.length}</span>
-        </button> */}
-        {/* <button className="relative">
-          <BsHeart />
-          <span className="counting-bubble">0</span>
-        </button> */}
       </div>
     </header>
   );
