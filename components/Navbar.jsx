@@ -1,32 +1,32 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { BsBag } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
+import { AiOutlineClose } from "react-icons/ai";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const products = useSelector((state) => state.myShop.products);
   const [toggleOpen, setToggleOpen] = useState(false);
 
+  const handleToggle = useCallback(() => {
+    setToggleOpen(!toggleOpen);
+  }, [toggleOpen]);
+
   return (
-    <header className="wrapper h-20 flex flex-wrap items-center justify-between md:mx-auto max-w-full ">
+    <header className="wrapper h-20 flex items-center justify-between">
       <div className="logo">
         <Link href="/" className="text-2xl font-semibold">
           euphoria.
         </Link>
       </div>
 
-      <FiMenu
-        className="block text-2xl md:hidden cursor-pointer"
-        onClick={() => setToggleOpen(!toggleOpen)}
-      />
-
-      <nav
-        className={`${
-          toggleOpen ? "block" : "hidden"
-        } nav-links md:items-center md:w-auto md:block`}
-      >
-        <ul className="flex gap-5 uppercase">
+      <nav onClick={handleToggle} className="nav-links">
+        <ul
+          className={`${
+            toggleOpen ? "flexColMod" : "hidden lg:flex gap-5 uppercase"
+          }`}
+        >
           <li>
             <Link href="/" className="linear-walkaways">
               Home
@@ -75,6 +75,20 @@ const Navbar = () => {
           </span>
           <span className="counting-bubble">{products.length}</span>
         </Link>
+        <span className="z-[3]">
+          <FiMenu
+            className={`${
+              !toggleOpen ? "block" : "hidden"
+            } text-2xl lg:hidden cursor-pointer`}
+            onClick={handleToggle}
+          />
+          <AiOutlineClose
+            className={`${
+              toggleOpen ? "block" : "hidden"
+            } text-2xl cursor-pointer`}
+            onClick={handleToggle}
+          />
+        </span>
       </div>
     </header>
   );
