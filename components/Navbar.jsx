@@ -26,6 +26,16 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link href="/products/men" className="linear-walkaways">
+              Men
+            </Link>
+          </li>
+          <li>
+            <Link href="/products/women" className="linear-walkaways">
+              Women
+            </Link>
+          </li>
+          <li>
             <Link href="/inventory" className="linear-walkaways">
               Inventory
             </Link>
@@ -45,16 +55,22 @@ const Navbar = () => {
 
       <div className="nav-btns flex gap-5">
         <button className="uppercase linear-walkaways">Sign in</button>
-        <button className="relative">
+        <Link href="/cart" className="relative">
           <span>
             <BsBag />
           </span>
           <span className="counting-bubble">{products.length}</span>
-        </button>
-        <button className="relative">
+        </Link>
+        {/* <button className="relative">
+          <span>
+            <BsBag />
+          </span>
+          <span className="counting-bubble">{products.length}</span>
+        </button> */}
+        {/* <button className="relative">
           <BsHeart />
           <span className="counting-bubble">0</span>
-        </button>
+        </button> */}
       </div>
     </header>
   );
