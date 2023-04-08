@@ -65,8 +65,10 @@ const Navbar = () => {
         </ul>
       </nav>
 
-      <div className="nav-btns flex gap-5">
-        <button className="uppercase linear-walkaways">Sign in</button>
+      <div className="nav-links-right flex gap-5">
+        <Link href="/login" className="uppercase linear-walkaways">
+          Sign in
+        </Link>
         <Link href="/cart" className="relative">
           <span>
             <BsBag />

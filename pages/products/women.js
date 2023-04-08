@@ -1,7 +1,7 @@
 import ProductItem from "@/components/ProductItem";
 import { getAllProducts } from "@/prisma/products";
 
-const women = ({ products }) => {
+const WomenProductsPage = ({ products }) => {
   return (
     <div className="wrapper my-10 flex flex-col gap-10">
       <h2 className="section-title">Browse all womens wear</h2>
@@ -15,7 +15,7 @@ const women = ({ products }) => {
   );
 };
 
-export default women;
+export default WomenProductsPage;
 
 export const getServerSideProps = async () => {
   const products = await getAllProducts();
