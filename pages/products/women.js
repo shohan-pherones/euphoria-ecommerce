@@ -3,8 +3,8 @@ import { getAllProducts } from "@/prisma/products";
 
 const WomenProductsPage = ({ products }) => {
   return (
-    <div className="wrapper my-20 flex flex-col gap-10">
-      <h2 className="section-title">Browse women collection</h2>
+    <div className="wrapper my-10 flex flex-col gap-10">
+      <h2 className="section-title">Browse all womens wear</h2>
 
       <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
         {products.map((product) => (

@@ -1,19 +1,31 @@
 import Link from "next/link";
+import { useState } from "react";
 import { BsBag } from "react-icons/bs";
+import { FiMenu } from "react-icons/fi";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const products = useSelector((state) => state.myShop.products);
+  const { products } = useSelector((state) => state.products);
+  const [toggleOpen, setToggleOpen] = useState(false);
 
   return (
-    <header className="wrapper flex justify-between items-center h-20">
+    <header className="wrapper h-20 flex flex-wrap items-center justify-between md:mx-auto max-w-full ">
       <div className="logo">
         <Link href="/" className="text-2xl font-semibold">
           euphoria.
         </Link>
       </div>
 
-      <nav className="nav-links">
+      <FiMenu
+        className="block text-2xl md:hidden cursor-pointer"
+        onClick={() => setToggleOpen(!toggleOpen)}
+      />
+
+      <nav
+        className={`${
+          toggleOpen ? "block" : "hidden"
+        } nav-links md:items-center md:w-auto md:block`}
+      >
         <ul className="flex gap-5 uppercase">
           <li>
             <Link href="/" className="linear-walkaways">
