@@ -1,12 +1,16 @@
 import Slider from "@/components/Slider";
 import ProductsPage from "./products";
 import { getAllProducts } from "@/prisma/products";
+import Countdown from "@/components/Countdown";
 
 const HomePage = ({ products }) => {
+  const endDate = new Date().getTime() + 48 * 60 * 60 * 1000;
+
   return (
     <div>
       <Slider />
       <ProductsPage products={products} />
+      <Countdown endDate={endDate} />
     </div>
   );
 };
