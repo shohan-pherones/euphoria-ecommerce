@@ -5,7 +5,7 @@ import { FiMenu } from "react-icons/fi";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const { products } = useSelector((state) => state.products);
+  const products = useSelector((state) => state.myShop.products);
   const [toggleOpen, setToggleOpen] = useState(false);
 
   return (
