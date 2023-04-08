@@ -3,7 +3,8 @@ import Navbar from "@/components/Navbar";
 import Head from "next/head";
 import "@/styles/globals.css";
 import { Provider } from "react-redux";
-import store from "@/store";
+import { store, persistor } from "@/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -23,9 +24,11 @@ export default function App({ Component, pageProps }) {
         <link rel="canonical" href="https://www.euphoria.com/" />
       </Head>
       <Provider store={store}>
-        <Navbar />
-        <Component {...pageProps} />
-        <Footer />
+        <PersistGate loading={null} persistor={persistor}>
+          <Navbar />
+          <Component {...pageProps} />
+          <Footer />
+        </PersistGate>
       </Provider>
     </>
   );

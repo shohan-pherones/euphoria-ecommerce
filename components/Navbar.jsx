@@ -3,7 +3,7 @@ import { BsBag, BsHeart } from "react-icons/bs";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const { products } = useSelector((state) => state.products);
+  const products = useSelector((state) => state.myShop.products);
 
   return (
     <header className="wrapper flex justify-between items-center h-20">
