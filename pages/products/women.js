@@ -1,10 +1,10 @@
 import ProductItem from "@/components/ProductItem";
 import { getAllProducts } from "@/prisma/products";
 
-const women = ({ products }) => {
+const WomenProductsPage = ({ products }) => {
   return (
-    <div className="wrapper my-10 flex flex-col gap-10">
-      <h2 className="section-title">Browse all products</h2>
+    <div className="wrapper my-20 flex flex-col gap-10">
+      <h2 className="section-title">Browse women collection</h2>
 
       <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
         {products.map((product) => (
@@ -15,7 +15,7 @@ const women = ({ products }) => {
   );
 };
 
-export default women;
+export default WomenProductsPage;
 
 export const getServerSideProps = async () => {
   const products = await getAllProducts();

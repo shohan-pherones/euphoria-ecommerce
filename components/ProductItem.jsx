@@ -20,7 +20,7 @@ const ProductItem = ({ product }) => {
       </span>
       <h3 className="text-2xl font-ligh h-[4rem]">{product.title}</h3>
       <p className="text-gray-500 h-[5rem]">
-        {product.description.split(".")[0]}.
+        {product.description?.split(".")[0]}.
       </p>
       <div className="flex justify-between items-center">
         <p className="text-rose-500 font-medium">
