@@ -10,6 +10,10 @@ const Navbar = () => {
   const [toggleOpen, setToggleOpen] = useState(false);
 
   const handleToggle = useCallback(() => {
+    if (window.innerWidth > 1023) {
+      return;
+    }
+
     setToggleOpen(!toggleOpen);
   }, [toggleOpen]);
 
@@ -69,24 +73,26 @@ const Navbar = () => {
         <Link href="/login" className="uppercase linear-walkaways">
           Sign in
         </Link>
+
         <Link href="/cart" className="relative">
           <span>
             <BsBag />
           </span>
           <span className="counting-bubble">{products.length}</span>
         </Link>
+
         <span className="z-[3]">
           <FiMenu
+            onClick={handleToggle}
             className={`${
               !toggleOpen ? "block" : "hidden"
             } text-2xl lg:hidden cursor-pointer`}
-            onClick={handleToggle}
           />
           <AiOutlineClose
+            onClick={handleToggle}
             className={`${
               toggleOpen ? "block" : "hidden"
-            } text-2xl cursor-pointer`}
-            onClick={handleToggle}
+            } text-2xl lg:hidden cursor-pointer`}
           />
         </span>
       </div>
