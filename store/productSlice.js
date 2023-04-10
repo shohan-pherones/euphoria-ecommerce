@@ -19,7 +19,17 @@ export const productSlice = createSlice({
         state.products.push(action.payload);
       }
     },
+
+    removeItem: (state, action) => {
+      state.products = state.products.filter(
+        (product) => product.id !== action.payload.id
+      );
+    },
+
+    clearCart: (state) => {
+      state.products = [];
+    },
   },
 });
 
-export const { addToCart } = productSlice.actions;
+export const { addToCart, removeItem, clearCart } = productSlice.actions;
