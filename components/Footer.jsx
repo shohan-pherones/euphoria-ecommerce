@@ -8,15 +8,15 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="text-center text-white border-t bg-black">
+    <footer className="text-center text-gray-300 border-t bg-black">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
         <div className="footer-col-1 flex flex-col">
-          <Link href="/" className="text-6xl font-semibold my-16">
+          <Link href="/" className="text-6xl font-semibold mt-16">
             euphoria.
           </Link>
         </div>
         <div className="footer-col-2">
-          <p className="follow-text pt-16 text-lg">Don't forget to follow us</p>
+          <p className="follow-text mt-16 text-lg">Don't forget to follow us</p>
           <div className="social-icons">
             <div className="icon-circle">
               <FaFacebookF className="text-rose-100 mx-auto" />
@@ -32,9 +32,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer-col-3  mt-10">
+        <div className="footer-col-3  mt-16">
           <p className="font-semibold">Useful Links</p>
-          <div className="nav-link flex flex-col-2 mt-4 gap-8 justify-center">
+          <div className="nav-link flex flex-col-2 mt-6 gap-8 justify-center">
             <div className="link-col-left flex flex-col text-left">
               <Link href="/" className="footer-nav-links">
                 Home
@@ -64,14 +64,15 @@ const Footer = () => {
         </div>
         <div className="footer-col-4 mt-16">
           <p>Need more informations ?</p>
-          <button className="footer-btn bg-rose-700 p-3 rounded-full uppercase text-sm font-medium hover:text-rose-500 hover:bg-white duration-200 my-3">
+          <button className="footer-btn bg-rose-700 p-3 rounded-full uppercase text-sm font-medium hover:text-rose-500 hover:bg-rose-100 duration-200 my-3">
             + new message
           </button>
           <p className="font-semibold text-xl">contact@euphoria.com</p>
         </div>
       </div>
 
-      <p className="copyright mt-14 pb-6">
+      <p className="copyright mt-16 pb-6">
+        <hr className="seprator my-6" />
         &copy; {new Date().getFullYear()} Euphoria. All rights reserved.
       </p>
     </footer>

@@ -55,5 +55,10 @@
 }
 
 .social-icons {
-  @apply flex gap-4 mt-2 justify-center;
+  @apply flex gap-4 mt-3 justify-center;
+}
+
+.seprator {
+  border-top: 2px solid #fda4af;
+  opacity: 0.35;
 }
