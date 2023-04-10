@@ -15,6 +15,7 @@ const Navbar = () => {
     }
 
     setToggleOpen(!toggleOpen);
+    document.body.classList.toggle("lock-scroll");
   }, [toggleOpen]);
 
   return (

@@ -36,9 +36,17 @@
   @apply text-3xl lg:text-5xl uppercase font-thin;
 }
 
+/* MOBILE NAV */
+
 .flexColMod {
-  @apply flex flex-col fixed z-[2] w-screen h-screen bg-white/90 top-0 bottom-0 left-0 right-0 items-center justify-center text-xl gap-5 text-center backdrop-blur-xl uppercase;
+  @apply flex flex-col fixed z-[2] w-screen h-[calc(screen-5rem)] mt-20 bg-white/80 top-0 bottom-0 left-0 right-0 items-center justify-center text-xl gap-5 text-center backdrop-blur-xl uppercase;
 }
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+/* FOOTER AREA */
 
 .icon-circle {
   @apply h-10 w-10 bg-rose-700 rounded-full flex items-center duration-300 cursor-pointer;
