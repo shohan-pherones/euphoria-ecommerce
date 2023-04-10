@@ -4,6 +4,7 @@ import { getAllProducts } from "@/prisma/products";
 import Countdown from "@/components/Countdown";
 import MenProductsPage from "./products/men";
 import WomenProductsPage from "./products/women";
+import Gallery from "@/components/Gallery";
 
 const HomePage = ({ products }) => {
   const endDate = new Date().getTime() + 48 * 60 * 60 * 1000;
@@ -20,6 +21,7 @@ const HomePage = ({ products }) => {
       <Countdown endDate={endDate} />
       <MenProductsPage products={menProducts} />
       <WomenProductsPage products={womenProducts} />
+      <Gallery />
     </div>
   );
 };
