@@ -39,3 +39,21 @@
 .flexColMod {
   @apply flex flex-col fixed z-[2] w-screen h-screen bg-white/90 top-0 bottom-0 left-0 right-0 items-center justify-center text-xl gap-5 text-center backdrop-blur-xl uppercase;
 }
+
+.icon-circle {
+  @apply h-10 w-10 bg-rose-700 rounded-full flex items-center  duration-300;
+}
+.icon-circle:hover {
+  @apply bg-rose-800;
+}
+
+.footer-nav-links {
+  @apply duration-300;
+}
+.footer-nav-links:hover {
+  @apply text-rose-500 duration-300;
+}
+
+.social-icons {
+  @apply flex gap-4 mt-2 justify-center;
+}
