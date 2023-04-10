@@ -68,3 +68,70 @@
 .social-icons {
   @apply flex gap-4 mt-3 justify-center;
 }
+
+/* image gallery disgn */
+.grid-container {
+  margin: auto auto;
+  width: 80rem;
+  height: 50rem;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  display: grid;
+  grid-template-areas:
+    "   .    .      .    .     .    .   img3  img3    .     .     .     . "
+    "  img1  img1  img2 img2 img2 img2  img3  img3    .     .     .     . "
+    "  img1  img1  img2 img2 img2 img2  img3  img3  img4  img4    .     . "
+    "  img1  img1  img2 img2 img2 img2  img3  img3  img4  img4    .     . "
+    "  img5  img5  img2 img2 img2 img2  img3  img3  img9  img10 img10   img10"
+    "  img5  img5  img6 img7 img7 img8  img8  img8  img9  img10 img10   img10"
+    "  img5  img5  img6 img7 img7 img8  img8  img8  img9  img10 img10   img10"
+    "  .      .    img6 img7 img7 img8  img8  img8   .    img10 img10   img10"
+    "  .      .      .  img7 img7   .     .      .   .     .      .       . ";
+
+  gap: 1rem;
+  padding: 0.75rem 0rem;
+}
+
+.grid-container > div {
+  padding: 0.6rem 0rem;
+}
+
+.item1 {
+  grid-area: img1;
+}
+
+.item2 {
+  grid-area: img2;
+}
+
+.item3 {
+  grid-area: img3;
+}
+
+.item4 {
+  grid-area: img4;
+}
+
+.item5 {
+  grid-area: img5;
+}
+
+.item6 {
+  grid-area: img6;
+}
+
+.item7 {
+  grid-area: img7;
+}
+
+.item8 {
+  grid-area: img8;
+}
+
+.item9 {
+  grid-area: img9;
+}
+
+.item10 {
+  grid-area: img10;
+}
