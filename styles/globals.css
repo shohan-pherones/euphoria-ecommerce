@@ -33,7 +33,7 @@
 }
 
 .section-title {
-  @apply text-5xl uppercase font-thin;
+  @apply text-3xl lg:text-5xl uppercase font-thin;
 }
 
 .flexColMod {
@@ -41,7 +41,7 @@
 }
 
 .icon-circle {
-  @apply h-10 w-10 bg-rose-700 rounded-full flex items-center  duration-300;
+  @apply h-10 w-10 bg-rose-700 rounded-full flex items-center duration-300 cursor-pointer;
 }
 .icon-circle:hover {
   @apply bg-rose-800;
@@ -56,9 +56,4 @@
 
 .social-icons {
   @apply flex gap-4 mt-3 justify-center;
-}
-
-.seprator {
-  border-top: 2px solid #fda4af;
-  opacity: 0.35;
 }

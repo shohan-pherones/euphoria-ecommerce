@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import Image from "next/image";
-
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -31,14 +29,15 @@ const ContactPage = () => {
   return (
     <div className="my-20 wrapper min-h-screen">
       <h2 className="section-title">Contact Us</h2>
-      <div className="flex gap-10 mt-10">
-        <div className=" flex w-full">
-          <form className="w-1/2 pr-8 py-5 rounded-lg">
+
+      <div className="flex mt-10">
+        <div className="flex flex-col lg:flex-row w-full gap-10">
+          <form className="w-full flex-[1]">
             <div className="gap-3">
               <div className="mb-4">
                 <label
                   htmlFor="name"
-                  className="block text-gray-700 font-light mb-2 uppercase"
+                  className="block text-gray-700 mb-2 uppercase"
                 >
                   Name
                 </label>
@@ -49,14 +48,14 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="appearance-none rounded w-full p-5 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300"
+                  className="appearance-none w-full p-4 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300"
                 />
               </div>
 
               <div className="mb-4">
                 <label
                   htmlFor="email"
-                  className="block text-gray-700 font-light mb-2 uppercase"
+                  className="block text-gray-700 mb-2 uppercase"
                 >
                   Email
                 </label>
@@ -67,33 +66,15 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="appearance-none rounded w-full p-5 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300"
+                  className="appearance-none w-full p-4 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300"
                 />
               </div>
-
-              {/* <div className="mb-4">
-                <label
-                  htmlFor="phone"
-                  className="block text-gray-700 font-bold mb-2"
-                >
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="appearance-none border border-stone-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:outline-sky-400 focus:border-none"
-                />
-              </div> */}
             </div>
 
             <div className="mb-4">
               <label
                 htmlFor="message"
-                className="block text-gray-700 font-light mb-2 uppercase"
+                className="block text-gray-700 mb-2 uppercase"
               >
                 Message
               </label>
@@ -103,10 +84,9 @@ const ContactPage = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="appearance-none rounded w-full p-5 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300 resize-none h-40"
+                className="appearance-none w-full p-4 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300 resize-none h-40"
               />
             </div>
-
             <button
               onClick={handleSubmit}
               className="bg-black hover:opacity-80 text-white py-5 px-10 uppercase duration-300"
@@ -115,45 +95,31 @@ const ContactPage = () => {
               Submit
             </button>
           </form>
-          <div className="left pl-8 py-8 gap-10 justify-between">
-            <div className="px-8 py-2">
-              <p className="font-medium">Return address for online orders:</p>
-              <p className="font-light">
-                Bohemian Traders 3 / 13 Bonnal Rd Erina, NSW, 2250
+
+          <div className="right flex flex-col gap-5 flex-[1]">
+            <div>
+              <p className="font-medium uppercase text-lg">
+                Return address for online orders:
+              </p>
+              <p>1600 Pennsylvania Ave NW, Washington, DC 20500</p>
+            </div>
+            <div>
+              <p className="font-medium uppercase text-lg">Phone Number:</p>
+              <p className="text-rose-500 underline underline-offset-2">
+                012-345-6789
               </p>
             </div>
-            <div className="px-8 py-2">
-              <p className="font-bold">Return address for online orders:</p>
-              <p>Bohemian Traders 3 / 13 Bonnal Rd Erina, NSW, 2250</p>
+            <div>
+              <p className="font-medium uppercase text-lg">Email Adress:</p>
+              <p className="text-rose-500 underline underline-offset-2">
+                contact@euphoria.com
+              </p>
             </div>
-            <div className="px-8 py-2">
-              <p className="font-bold">phone:</p>
-              <a
-                className="text-amber-500"
-                href="tel: phoneNumber"
-                target="blank"
-              >
-                +8801821732936
-              </a>
+            <div>
+              <p className="font-medium uppercase text-lg">Opening Hours:</p>
+              <p>Mon-Sat: 10:00am - 8:00pm</p>
+              <p>Sun: 11:00am - 9:00pm</p>
             </div>
-            <div className="px-8 py-2">
-              <p className="font-bold">Email:</p>
-              <a
-                className="text-amber-500"
-                href="mailto: abdullahalsayad03@gmail.com"
-                target="blank"
-              >
-                <p>abdullahalsayad03@gmail.com</p>
-              </a>
-            </div>
-
-            <div className="px-8 pt-8">
-              <p className="font-semibold">time:</p>
-              <p>Mon-Sat 9:00am - 5:00pm </p>
-              <p>Sun 10:00am - 4:00pm</p>
-            </div>
-
-            <div></div>
           </div>
         </div>
       </div>

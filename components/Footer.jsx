@@ -8,15 +8,18 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="text-center text-gray-300 border-t bg-black">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-        <div className="footer-col-1 flex flex-col">
-          <Link href="/" className="text-6xl font-semibold mt-16">
+    <footer className="text-gray-300 bg-black py-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-20 wrapper w-full gap-10">
+        <div className="footer-col-1 flex flex-col items-start">
+          <Link
+            href="/"
+            className="text-2xl font-semibold text-rose-500 hover:text-white duration-300"
+          >
             euphoria.
           </Link>
         </div>
-        <div className="footer-col-2">
-          <p className="follow-text mt-16 text-lg">Don't forget to follow us</p>
+        <div className="footer-col-2 flex flex-col items-start">
+          <p className="follow-text uppercase tracking-wider text-gray-400">{`Don't forget to follow us`}</p>
           <div className="social-icons">
             <div className="icon-circle">
               <FaFacebookF className="text-rose-100 mx-auto" />
@@ -32,10 +35,12 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer-col-3  mt-16">
-          <p className="font-semibold">Useful Links</p>
-          <div className="nav-link flex flex-col-2 mt-6 gap-8 justify-center">
-            <div className="link-col-left flex flex-col text-left">
+        <div className="footer-col-3 flex flex-col items-start">
+          <p className="uppercase font-medium text-rose-500 tracking-wider">
+            Useful Links
+          </p>
+          <div className="nav-link flex flex-col-2 mt-3 gap-10 justify-center">
+            <div className="link-col-left flex flex-col text-left gap-1 uppercase">
               <Link href="/" className="footer-nav-links">
                 Home
               </Link>
@@ -49,7 +54,7 @@ const Footer = () => {
                 Women
               </Link>
             </div>
-            <div className="link-col-right flex flex-col text-left">
+            <div className="link-col-right flex flex-col text-left gap-1 uppercase">
               <Link href="/inventory" className="footer-nav-links">
                 Inventory
               </Link>
@@ -62,17 +67,18 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer-col-4 mt-16">
-          <p>Need more informations ?</p>
-          <button className="footer-btn bg-rose-700 p-3 rounded-full uppercase text-sm font-medium hover:text-rose-500 hover:bg-rose-100 duration-200 my-3">
-            + new message
+        <div className="footer-col-4 flex flex-col items-start xl:items-center gap-3">
+          <p className="uppercase tracking-wider text-gray-400">
+            Need more informations?
+          </p>
+          <button className="footer-btn bg-rose-700 py-4 px-6 rounded-full uppercase text-sm font-medium hover:text-rose-500 hover:bg-rose-50 duration-300">
+            + New Message
           </button>
-          <p className="font-semibold text-xl">contact@euphoria.com</p>
+          <p className="font-medium text-lg">contact@euphoria.com</p>
         </div>
       </div>
 
-      <p className="copyright mt-16 pb-6">
-        <hr className="seprator my-6" />
+      <p className="copyright border-t border-gray-500/40 pt-20 text-gray-400 wrapper text-center uppercase">
         &copy; {new Date().getFullYear()} Euphoria. All rights reserved.
       </p>
     </footer>
