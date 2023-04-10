@@ -39,7 +39,7 @@ const ProductDetails = ({ product }) => {
         <h2 className="text-4xl">{product.title}</h2>
         <div className="flex gap-10 items-center">
           <p className="text-2xl text-rose-500 font-medium">
-            {formatCurrency(product.price)}
+            {formatCurrency(product.price * quantity)}
           </p>
           <div className="counter flex items-center bg-gray-100 text-2xl">
             <button

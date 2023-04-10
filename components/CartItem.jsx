@@ -1,8 +1,11 @@
-import { formatCurrency } from "@/utils/formatCurrency";
 import Image from "next/image";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { formatCurrency } from "@/utils/formatCurrency";
+import { useDispatch } from "react-redux";
+import { removeItem } from "@/store/productSlice";
 
 const CartItem = ({ product }) => {
+  const dispatch = useDispatch();
+
   return (
     <div
       key={product.id}
@@ -21,24 +24,16 @@ const CartItem = ({ product }) => {
         />
         <div className="details flex flex-col items-start gap-2">
           <span>{product.title}</span>
-          <button className="linear-walkaways uppercase text-gray-400">
+          <button
+            onClick={() => dispatch(removeItem(product))}
+            className="linear-walkaways uppercase text-gray-400"
+          >
             Remove
           </button>
         </div>
       </div>
-      <p className="unit-price">{formatCurrency(product.price)}</p>
-      <div className="counter flex">
-        <button className="w-10 h-10 bg-gray-50 border flex justify-center items-center active:bg-gray-700 active:text-gray-50">
-          <BsChevronDown />
-        </button>
-        <span className="w-10 h-10 bg-gray-50 border-t border-b flex justify-center items-center active:bg-gray-700 active:text-gray-50">
-          {product.quantity}
-        </span>
-        <button className="w-10 h-10 bg-gray-50 border flex justify-center items-center active:bg-gray-700 active:text-gray-50">
-          <BsChevronUp />
-        </button>
-      </div>
-
+      <p className="unit-price text-center">{formatCurrency(product.price)}</p>
+      <p className="quantity text-center">{product.quantity}</p>
       <div className="total-price ml-auto">
         <span>{formatCurrency(product.price * product.quantity)}</span>
       </div>
