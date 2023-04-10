@@ -74,7 +74,7 @@ const About = () => {
     <div className="container mx-auto">
       <div>
         <div className="">
-          <h1 className="text-4xl mb-4 text-center">About Us</h1>
+          <h1 className="section-title text-center p-5">About Us</h1>
 
           <p className="text-sm leading-7 mb-6 text-center">
             We are a leading e-commerce website that offers a wide range of
