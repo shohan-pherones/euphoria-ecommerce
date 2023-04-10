@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import Image from "next/image";
-
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -117,19 +115,23 @@ const ContactPage = () => {
           </form>
           <div className="left pl-8 py-8 gap-10 justify-between">
             <div className="px-8 py-2">
-              <p className="font-medium">Return address for online orders:</p>
+              <p className="font-normal">Return address for online orders:</p>
               <p className="font-light">
                 Bohemian Traders 3 / 13 Bonnal Rd Erina, NSW, 2250
               </p>
             </div>
             <div className="px-8 py-2">
-              <p className="font-bold">Return address for online orders:</p>
-              <p>Bohemian Traders 3 / 13 Bonnal Rd Erina, NSW, 2250</p>
+              <p className="font-normal uppercase">
+                Return address for online orders:
+              </p>
+              <p className="font-light">
+                Bohemian Traders 3 / 13 Bonnal Rd Erina, NSW, 2250
+              </p>
             </div>
             <div className="px-8 py-2">
-              <p className="font-bold">phone:</p>
+              <p className="font-normal uppercase">phone:</p>
               <a
-                className="text-amber-500"
+                className="text-rose-500 font-light"
                 href="tel: phoneNumber"
                 target="blank"
               >
@@ -137,9 +139,9 @@ const ContactPage = () => {
               </a>
             </div>
             <div className="px-8 py-2">
-              <p className="font-bold">Email:</p>
+              <p className="font-normal uppercase">Email:</p>
               <a
-                className="text-amber-500"
+                className="text-rose-500 font-light"
                 href="mailto: abdullahalsayad03@gmail.com"
                 target="blank"
               >
@@ -148,9 +150,9 @@ const ContactPage = () => {
             </div>
 
             <div className="px-8 pt-8">
-              <p className="font-semibold">time:</p>
-              <p>Mon-Sat 9:00am - 5:00pm </p>
-              <p>Sun 10:00am - 4:00pm</p>
+              <p className="font-normal uppercase">time:</p>
+              <p className="font-light">Mon-Sat 9:00am - 5:00pm </p>
+              <p className="font-light">Sun 10:00am - 4:00pm</p>
             </div>
 
             <div></div>
