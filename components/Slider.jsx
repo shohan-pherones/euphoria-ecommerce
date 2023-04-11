@@ -3,9 +3,30 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import Slide from "./Slide";
 
 const data = [
-  "https://images.pexels.com/photos/2409681/pexels-photo-2409681.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/1500482/pexels-photo-1500482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/906002/pexels-photo-906002.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  {
+    id: 1,
+    src: "https://images.pexels.com/photos/2409681/pexels-photo-2409681.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    headline: "Unleash Your Style",
+    body: "Shop the Latest Trends on Our Fashion Website & discover your fashion identity today! ",
+    cta: "Browse our collections !",
+    category: "",
+  },
+  {
+    id: 2,
+    src: "https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    headline: "Be a Fashion Icon",
+    body: "Stay on Top of the Latest Mens Fashion Trends. Upgrade your wardrobe with our newest arrivals. Shop now and unleash your inner fashionista.",
+    cta: "View Mens Collection !",
+    category: "men",
+  },
+  {
+    id: 3,
+    src: "https://images.pexels.com/photos/1500482/pexels-photo-1500482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    headline: "Elegance Redefined",
+    body: "Discover Timeless Fashion. Step into a world of sophistication and grace. Shop our classical women's fashion collection today.",
+    cta: "Browse ladies collection !",
+    category: "women",
+  },
 ];
 
 const Slider = () => {
