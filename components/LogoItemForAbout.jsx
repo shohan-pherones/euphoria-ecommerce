@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const LogoItemForAbout = ({ logo }) => {
   return (
-    <div className="">
+    <div>
       <Image
         priority
         unoptimized
@@ -11,7 +11,7 @@ const LogoItemForAbout = ({ logo }) => {
         width={50}
         height={50}
         alt={logo.title}
-        className="w-28 h-full object-cover p-5 "
+        className="w-28 h-full object-cover p-5"
       />
     </div>
   );

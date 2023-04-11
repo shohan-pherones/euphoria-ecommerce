@@ -47,7 +47,7 @@ export const ImageAbout = () => {
             }
             width={50}
             height={50}
-            alt={"image1"}
+            alt={"image3"}
             className="w-96  object-cover"
           />
 
@@ -62,7 +62,7 @@ export const ImageAbout = () => {
             }
             width={50}
             height={50}
-            alt={"image2"}
+            alt={"image4"}
             className="absolute top-20 left-[300px] w-2/4"
           />
         </div>

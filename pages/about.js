@@ -43,32 +43,32 @@ const AboutPage = () => {
           priority
           unoptimized
           loader={() =>
-            "https://images.pexels.com/photos/10047607/pexels-photo-10047607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "https://images.pexels.com/photos/242829/pexels-photo-242829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           }
           src={
-            "https://images.pexels.com/photos/10047607/pexels-photo-10047607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "https://images.pexels.com/photos/242829/pexels-photo-242829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           }
           width={50}
           height={25}
-          alt={"background image"}
-          className="w-full h-[48rem] object-cover"
+          alt={"Man Riding on Motorcycle"}
+          className="w-full h-[48rem] object-cover brightness-50"
         />
 
-        <p className="text-center absolute top-1/2 left-96 uppercase font-thin text-white text-8xl">
-          About Us
+        <p className="text-center absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] uppercase font-extralight text-white text-8xl">
+          About Euphoria
         </p>
       </div>
 
       <div className="wrapper">
         <div className="my-20 text-center">
-          <p className="font-light uppercase text-xl p-5 text-black ">
-            About euphoria Shopping
+          <p className="tracking-widest font-semibold uppercase text-xl p-5 text-black">
+            euphoria, the new era begins!
           </p>
-          <p className="font-medium text-xl px-96 leading-loose pb-5">
+          <p className="text-4xl px-[20rem] pb-5 font-extralight">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo placeat
             culpa totam sit dolorem a rerum quasi nam!
           </p>
-          <p className="font-light text-base px-80 leading-normal pb-5">
+          <p className="px-[15rem] pb-5 text-xl font-light">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem
             ut est quisquam, laboriosam, temporibus sed veniam error molestias
             ducimus esse alias nisi? Corporis eligendi est amet, provident sit
@@ -83,22 +83,20 @@ const AboutPage = () => {
           <ImageAbout />
         </div>
 
-        <div className="grid grid-cols-2 justify-center items-center p-20">
-          <div className="left px-20 font-medium text-xl text-center leading-loose">
+        <div className="grid grid-cols-2 justify-center items-start p-20">
+          <div className="text-4xl px-[5rem] pb-5 font-extralight">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
               dicta magnam fugiat ullam saepe accusamus quasi. Rerum facere
               laborum quos nulla.
             </p>
           </div>
-          <div className="right px-20 font-light text-base text-center leading-normal pb-5">
+          <div className="px-[5rem] pb-5 text-xl font-light">
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti
-              magni facilis rerum corrupti eaque, perferendis voluptas ducimus
-              nemo repudiandae quibusdam quam mollitia voluptatibus iure nostrum
-              iste beatae neque, tempore hic, quidem architecto et molestiae!
-              Magni perferendis eaque labore aspernatur tenetur dolorem magnam
-              eius doloribus iure, saepe voluptatum iusto harum itaque.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              a quidem ipsa at iure ipsam accusantium in reiciendis voluptatem
+              exercitationem, dicta quae optio repellendus voluptas nesciunt sit
+              maiores non molestiae id corrupti distinctio maxime natus.
             </p>
           </div>
         </div>
@@ -108,22 +106,24 @@ const AboutPage = () => {
           priority
           unoptimized
           loader={() =>
-            "https://www.ottografie.nl/wp-content/uploads/2018/06/mimoneda-nicole-meyer-otto-van-den-toorn-5-2000x1335.jpg"
+            "https://images.pexels.com/photos/6567607/pexels-photo-6567607.jpeg?auto=compress&cs=tinysrgb&w=1600"
           }
           src={
-            "https://www.ottografie.nl/wp-content/uploads/2018/06/mimoneda-nicole-meyer-otto-van-den-toorn-5-2000x1335.jpg"
+            "https://images.pexels.com/photos/6567607/pexels-photo-6567607.jpeg?auto=compress&cs=tinysrgb&w=1600"
           }
           width={500}
           height={500}
-          alt={"background image"}
+          alt={"Happy woman jumping with shopping bags"}
           className="w-full h-auto object-cover"
         />
       </div>
 
       <div className="wrapper py-10 flex flex-col gap-10">
-        <p className="text-center font-bold text-2xl">Patners</p>
+        <p className="tracking-widest font-semibold uppercase text-xl p-5 text-black text-center">
+          Partners
+        </p>
 
-        <p className="text-center font-medium text-xl">
+        <p className="text-4xl px-[5rem] pb-5 font-extralight text-center">
           We are very grateful for the opportunity to collaborate with such
           beautiful agencies and brands
         </p>
