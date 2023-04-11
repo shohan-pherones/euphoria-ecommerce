@@ -16,6 +16,19 @@
   @apply absolute -right-2 bottom-0 bg-black w-4 h-4 rounded-full flex justify-center items-center text-white text-xs;
 }
 
+/* HOME SLIDE */
+.cta-btn {
+  @apply relative;
+}
+.cta-btn::before {
+  content: "";
+  @apply top-0 left-0 right-0 bottom-0 absolute bg-rose-900 w-0 duration-300 z-10;
+}
+
+.cta-btn:hover::before {
+  @apply w-full;
+}
+
 .slider {
   @apply h-[calc(100vh-5rem)] flex duration-1000;
 }
