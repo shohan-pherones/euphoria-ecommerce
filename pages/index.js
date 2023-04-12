@@ -5,6 +5,7 @@ import Countdown from "@/components/Countdown";
 import MenProductsPage from "./products/men";
 import WomenProductsPage from "./products/women";
 import Gallery from "@/components/Gallery";
+import Categories from "@/components/Categories";
 
 const HomePage = ({ products }) => {
   const endDate = new Date().getTime() + 48 * 60 * 60 * 1000;
@@ -17,6 +18,7 @@ const HomePage = ({ products }) => {
   return (
     <div>
       <Slider />
+      <Categories />
       <ProductsPage products={products} />
       <Countdown endDate={endDate} />
       <MenProductsPage products={menProducts} />
