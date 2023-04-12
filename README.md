@@ -48,6 +48,9 @@ To install Euphoria E-commerce, follow these simple steps:
 2. Install the required dependencies by running `npm install` or `npm i`.
 3. Create a `.env` file in the root directory and add the following variables:
    - `DATABASE_URL`
+   - `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
+   - `STRIPE_SECRET_KEY`
+   - `HOST`
 4. Start the application by running `npm run dev`.
 
 ## Contribution
