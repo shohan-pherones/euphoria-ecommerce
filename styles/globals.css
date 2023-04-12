@@ -59,6 +59,40 @@
   overflow: hidden;
 }
 
+/* CATEGORIES */
+.sq-men {
+  background-image: url(https://cdn.pixabay.com/photo/2017/05/17/04/03/golden-apple-2319790_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  @apply flex-1 aspect-square flex items-center justify-center relative;
+}
+
+.sq-women {
+  background-image: url(https://cdn.pixabay.com/photo/2017/09/20/10/29/beautiful-2768032_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  @apply flex-1 aspect-square flex items-center justify-center relative;
+}
+
+.category-title-men,
+.category-title-women {
+  @apply text-6xl text-gray-100 font-medium uppercase z-20 hidden duration-500 ease-in-out;
+}
+
+.overlay {
+  @apply absolute top-0 bottom-0 left-0 right-0 h-full w-full opacity-0 duration-500 bg-gray-800 z-10 ease-in-out;
+}
+
+.sq-men:hover .overlay,
+.sq-women:hover .overlay {
+  opacity: 0.5;
+}
+
+.sq-men:hover .category-title-men,
+.sq-women:hover .category-title-women {
+  @apply block;
+}
+
 /* FOOTER AREA */
 
 .icon-circle {
