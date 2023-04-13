@@ -24,18 +24,21 @@ const CartPage = () => {
       items: products,
     });
 
-    /* REDIRECTING */
     if (checkoutSession) {
       console.log(checkoutSession);
     }
 
+    /*  DISPATCHING THE CLEAR CART FUNCTION */
+    dispatch(clearCart());
+
+    /* REDIRECTING */
     const result = await stripe?.redirectToCheckout({
       sessionId: checkoutSession?.data?.id,
     });
 
-    if (result?.error) alert(result?.error.message);
-
-    dispatch(clearCart());
+    if (result?.error) {
+      alert(result?.error.message);
+    }
   };
 
   /* SUBTOTAL CALCULATION */
