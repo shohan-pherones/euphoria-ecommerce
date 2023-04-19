@@ -179,3 +179,16 @@
 .item10 {
   grid-area: img10;
 }
+
+/* Cart design */
+@media screen and (max-width: 425px) {
+  .product-headlines {
+    grid-template-columns: repeat(12, minmax(auto-fill, 1fr));
+    gap: 5px;
+  }
+
+  .img {
+    width: 5rem;
+    height: 5rem;
+  }
+}

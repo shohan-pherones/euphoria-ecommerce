@@ -53,8 +53,8 @@ const CartPage = () => {
   };
 
   return (
-    <div className="cart-section wrapper my-20 min-h-screen">
-      <h2 className="section-title mb-10">
+    <div className="cart-section wrapper my-20 min-h-screen max-[425px]:my-10 max-[425px]:text-[12px] max-[768px]:text-sm max-[1024px]:text-base max-[1024px]:px-5">
+      <h2 className="section-title mb-10 max-[425px]:text-center max-[425px]:text-2xl max-[425px]:mb-5 max-[1024px]:text-3xl">
         {products.length > 0
           ? `Your cart (${products.length} item${
               products.length > 1 ? "s" : ""
@@ -65,7 +65,7 @@ const CartPage = () => {
       {products.length < 1 && (
         <Link
           href="/products"
-          className="clear-cart uppercase border py-3 px-5 hover:bg-cyan-500 hover:text-cyan-50 hover:border-cyan-500 duration-300"
+          className="clear-cart uppercase border py-3 px-5 hover:bg-cyan-500 hover:text-cyan-50 hover:border-cyan-500 duration-300 "
         >
           Continue Shopping
         </Link>
@@ -88,28 +88,28 @@ const CartPage = () => {
             </div>
           </div>
 
-          <div className="cart-lower flex justify-between items-start my-10">
-            <div className="flex justify-center items-center gap-5">
+          <div className="cart-lower flex justify-between items-start my-10 max-[425px]:my-5 max-[425px]:gap-5">
+            <div className="flex justify-center items-center gap-5 max-[425px]:flex-col max-[425px]:w-full">
               <button
                 onClick={() => dispatch(clearCart())}
-                className="clear-cart uppercase border p-3 hover:bg-rose-500 hover:text-rose-50 hover:border-rose-500 duration-300"
+                className="clear-cart uppercase border p-3 hover:bg-rose-500 hover:text-rose-50 hover:border-rose-500 duration-300 max-[425px]:w-full"
               >
                 Clear Cart
               </button>
               <Link
                 href="/products"
-                className="clear-cart uppercase border p-3 hover:bg-cyan-500 hover:text-cyan-50 hover:border-cyan-500 duration-300"
+                className="clear-cart uppercase border p-3 hover:bg-cyan-500 hover:text-cyan-50 hover:border-cyan-500 duration-300 max-[425px]:w-full"
               >
                 Continue Shopping
               </Link>
             </div>
 
-            <div className="flex flex-col items-start gap-5">
-              <div className="top flex justify-between items-center w-full text-xl font-medium border-b">
+            <div className="flex flex-col items-start gap-5 max-[425px]:w-full">
+              <div className="top flex justify-between items-center w-full text-xl font-medium border-b max-[425px]:text-[12px]">
                 <span className="uppercase">Subtotal</span>
                 <span>{total()}</span>
               </div>
-              <p className="text-gray-400">
+              <p className="text-gray-400  max-[425px]:hidden">
                 Shipping cost will calculate at the checkout.
               </p>
 

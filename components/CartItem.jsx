@@ -9,9 +9,9 @@ const CartItem = ({ product }) => {
   return (
     <div
       key={product.id}
-      className="product grid grid-cols-5 gap-10 border-b pb-5 mt-5"
+      className="product grid grid-cols-5 gap-10 border-b pb-5 mt-5 max-[425px]:gap-2 max-[425px]:mt-2 max-[425px]:pb-2"
     >
-      <div className="left flex col-span-2 gap-5">
+      <div className="left flex col-span-2 gap-5 max-[425px]:gap-2">
         <Image
           priority
           unoptimized
@@ -20,7 +20,7 @@ const CartItem = ({ product }) => {
           width={500}
           height={500}
           alt={product.title}
-          className="w-24 h-24 object-cover"
+          className="img w-24 h-24 object-cover"
         />
         <div className="details flex flex-col items-start gap-2">
           <span>{product.title}</span>
