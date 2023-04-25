@@ -85,7 +85,7 @@
 
 .sq-men:hover .overlay,
 .sq-women:hover .overlay {
-  opacity: 0.5;
+  opacity: 0.85;
 }
 
 .sq-men:hover .category-title-men,
