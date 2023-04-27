@@ -71,7 +71,7 @@ const Navbar = () => {
       </nav>
 
       <div onClick={handleToggle} className="nav-links-right flex gap-5">
-        <Link href="/login" className="uppercase linear-walkaways">
+        <Link href="/user/login" className="uppercase linear-walkaways">
           Sign in
         </Link>
 
