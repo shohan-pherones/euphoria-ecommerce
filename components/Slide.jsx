@@ -12,7 +12,7 @@ const Slide = ({ image }) => {
           href={`products/${image.category}`}
           className="cta-btn border-2 uppercase h-12 w-72 mt-5 duration-300 font-medium"
         >
-          <span className="absolute z-30 w-full text-center top-[25%] mb-36 sm:mb-0">
+          <span className="absolute z-30 w-full text-center top-[25%]">
             {image.cta}
           </span>
         </Link>
