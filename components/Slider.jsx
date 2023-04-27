@@ -54,7 +54,7 @@ const Slider = () => {
         ))}
       </div>
 
-      <div className="navigators">
+      <div className="navigators bottom-10 sm:bottom-20">
         <button onClick={goToPrev} className="navigators-btn">
           <BsArrowLeft />
         </button>

@@ -34,7 +34,7 @@
 }
 
 .navigators {
-  @apply absolute left-0 right-0 bottom-20 m-auto w-fit z-[1] text-2xl flex gap-10;
+  @apply absolute left-0 right-0 m-auto w-fit z-[1] text-2xl flex gap-10;
 }
 
 .navigators-btn {
