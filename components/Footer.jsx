@@ -9,8 +9,8 @@ import {
 const Footer = () => {
   return (
     <footer className="text-gray-300 bg-black py-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-20 wrapper w-full gap-10">
-        <div className="footer-col-1 flex flex-col items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-20 wrapper w-full gap-16 md:gap-10 lg:gap-5 xl:gap-10 2xl:px-20 ">
+        <div className="footer-col-1 flex flex-col items-center md:items-start">
           <Link
             href="/"
             className="text-2xl font-semibold text-rose-500 hover:text-white duration-300"
@@ -18,7 +18,7 @@ const Footer = () => {
             euphoria.
           </Link>
         </div>
-        <div className="footer-col-2 flex flex-col items-start">
+        <div className="footer-col-2 flex flex-col items-center md:items-start">
           <p className="follow-text uppercase tracking-wider text-gray-400">{`Don't forget to follow us`}</p>
           <div className="social-icons">
             <div className="icon-circle">
@@ -35,7 +35,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer-col-3 flex flex-col items-start">
+        <div className="footer-col-3 flex flex-col items-center md:items-start">
           <p className="uppercase font-medium text-rose-500 tracking-wider">
             Useful Links
           </p>
@@ -67,7 +67,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer-col-4 flex flex-col items-start xl:items-center gap-3">
+        <div className="footer-col-4 flex flex-col items-center md:items-start xl:items-center gap-3">
           <p className="uppercase tracking-wider text-gray-400">
             Need more informations?
           </p>
