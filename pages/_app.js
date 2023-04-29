@@ -5,6 +5,8 @@ import "@/styles/globals.css";
 import { Provider } from "react-redux";
 import { store, persistor } from "@/store";
 import { PersistGate } from "redux-persist/integration/react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -25,6 +27,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
+          <ToastContainer />
           <Navbar />
           <Component {...pageProps} />
           <Footer />
