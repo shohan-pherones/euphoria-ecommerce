@@ -3,43 +3,10 @@ import { formatCurrency } from "@/utils/formatCurrency";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "@/components/CartItem";
 import { clearCart } from "@/store/productSlice";
-import { loadStripe } from "@stripe/stripe-js";
-import axios from "axios";
 
 const CartPage = () => {
   const products = useSelector((state) => state.myShop.products);
   const dispatch = useDispatch();
-
-  /* STRIPE PROMISE */
-  const stripePromise = loadStripe(
-    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-  );
-
-  /* CHECKOUT HANDLER */
-  const handleCheckout = async () => {
-    const stripe = await stripePromise;
-
-    /* SENDING POST REQ. TO CREATE A CHECKOUT SESSION */
-    const checkoutSession = await axios.post("/api/create-checkout-session", {
-      items: products,
-    });
-
-    if (checkoutSession) {
-      console.log(checkoutSession);
-    }
-
-    /*  DISPATCHING THE CLEAR CART FUNCTION */
-    dispatch(clearCart());
-
-    /* REDIRECTING */
-    const result = await stripe?.redirectToCheckout({
-      sessionId: checkoutSession?.data?.id,
-    });
-
-    if (result?.error) {
-      alert(result?.error.message);
-    }
-  };
 
   /* SUBTOTAL CALCULATION */
   const total = () => {
@@ -49,6 +16,7 @@ const CartPage = () => {
     );
     const fixedTotal = +calcTotal.toFixed(2);
     const subtotal = formatCurrency(fixedTotal);
+
     return subtotal;
   };
 
@@ -112,12 +80,7 @@ const CartPage = () => {
               <p className="text-gray-400  max-[425px]:hidden">
                 Shipping cost will calculate at the checkout.
               </p>
-
-              {/* CHECKOUT BUTTON */}
-              <button
-                onClick={handleCheckout}
-                className="checkout bg-cyan-500 w-full py-5 uppercase font-medium text-cyan-50 tracking-widest hover:bg-cyan-600 duration-300 text-center"
-              >
+              <button className="checkout bg-cyan-500 w-full py-5 uppercase font-medium text-cyan-50 tracking-widest hover:bg-cyan-600 duration-300 text-center">
                 Proceed to checkout
               </button>
             </div>
