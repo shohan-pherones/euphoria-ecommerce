@@ -71,7 +71,7 @@ const Navbar = () => {
         </ul>
       </nav>
 
-      <div onClick={handleToggle} className="nav-links-right flex gap-5">
+      <div className="nav-links-right flex gap-5">
         <button onClick={signIn} className="uppercase linear-walkaways">
           Sign in
         </button>
