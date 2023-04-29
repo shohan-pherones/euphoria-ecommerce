@@ -4,7 +4,7 @@ const login = () => {
   return (
     <div>
       <form className="login-form min-h-screen flex flex-col gap-5 pt-14 mx-auto max-w-lg  px-10 md:px-0">
-        <h2 className="text-4xl font-light text-rose-500 mb-5 uppercase">
+        <h2 className="text-4xl font-light text-black mb-5 uppercase">
           Register
         </h2>
 
@@ -14,7 +14,7 @@ const login = () => {
             type="email"
             id="email"
             placeholder="Enter your e-mail address"
-            className="bg-transparent border border-gray-500 py-[0.85rem] px-5 outline-none focus:border-rose-500 duration-300"
+            className="bg-transparent border border-gray-500 py-[0.85rem] px-5 outline-none focus:border-cyan-500 duration-300"
           />
         </div>
 
@@ -24,7 +24,7 @@ const login = () => {
             type="password"
             id="password"
             placeholder="Enter your password"
-            className="bg-transparent border border-gray-500 py-[0.85rem] px-5 outline-none focus:border-rose-500 duration-300"
+            className="bg-transparent border border-gray-500 py-[0.85rem] px-5 outline-none focus:border-cyan-500 duration-300"
           />
         </div>
 
@@ -35,12 +35,8 @@ const login = () => {
           Register
         </button>
         <div>
-          <p className="mb-2">Already registered?</p>
-          <Link
-            href="../user/login"
-            type="submit"
-            className="border text-md py-3 bg-rose-400 text-center text-white font-medium hover:bg-rose-500 duration-300 uppercase w-full tracking-widest md:text-xs lg:text-[14px] lg:py-5 max-[425px]:w-full"
-          >
+          <span className="mb-2">Already registered? </span>
+          <Link href="../user/login" className="font-semibold  hover:underline">
             Log in
           </Link>
         </div>
