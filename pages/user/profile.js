@@ -17,9 +17,9 @@ const user = {
 
 const ProfilePage = () => {
   return (
-    <div className="min-h-screen container mx-auto flex flex-col pt-20">
+    <div className="min-h-screen container mx-auto flex flex-col pt-20 max-[425px]:px-5 max-[768px]:px-5 max-[1024px]:px-3">
       <div className="profile-top flex gap-10 justify-between items-center max-[425px]:flex-col">
-        <div className="cart-left border w-[40%] h-[18rem] flex flex-col justify-start items-center gap-3 rounded-sm shadow-sm hover:shadow-lg hover:cursor-pointer duration-300 max-[425px]:w-full max-[425px]:text-sm">
+        <div className="cart-left border w-[40%] h-[18rem] flex flex-col justify-start items-center gap-3 rounded-sm max-[425px]:w-full max-[425px]:text-sm">
           <div className="user-img w-[10rem] h-[10rem] mt-5 rounded-full">
             <Image
               priority
@@ -32,7 +32,7 @@ const ProfilePage = () => {
               className="w-full h-full object-cover rounded-full"
             />
           </div>
-          <h2 className="text-2xl md:text-base">{user?.name}</h2>
+          {/* <h2 className="text-2xl md:text-base">{user?.name}</h2> */}
           <h2 className="text-2xl md:text-base">{user?.job}</h2>
         </div>
         <div className="cart-right w-[60%] h-[18rem] flex flex-col shadow-sm justify-between max-[425px]:w-full max-[425px]:text-sm">
