@@ -52,7 +52,7 @@
 /* MOBILE NAV */
 
 .flexColMod {
-  @apply flex flex-col fixed z-[2] w-screen h-[calc(screen-5rem)] mt-20 bg-white/80 top-0 bottom-0 left-0 right-0 items-center justify-center text-xl gap-5 text-center backdrop-blur-xl uppercase;
+  @apply flex flex-col fixed z-[2] w-screen h-[calc(screen-5rem)] bg-white/80 top-0 bottom-0 left-0 right-0 items-center justify-center text-xl gap-5 text-center backdrop-blur-xl uppercase;
 }
 
 .lock-scroll {
