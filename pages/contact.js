@@ -1,29 +1,50 @@
-import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+import { toast } from "react-toastify";
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    phone: "",
-  });
+  const formRef = useRef(null);
 
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
+    const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
+    const appTemplateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+    const appPublicId = process.env.NEXT_PUBLIC_USER_ID;
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-      phone: "",
-    });
+    emailjs
+      .sendForm(serviceID, appTemplateId, formRef.current, appPublicId)
+      .then(
+        () => {
+          toast.success("Message Sent !", {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+        },
+        () => {
+          toast.error("Something went wrong!", {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+        }
+      );
+
+    //reset
+
+    e.target.querySelector(".name").value = "";
+    e.target.querySelector(".email").value = "";
+    e.target.querySelector(".message").value = "";
   };
 
   return (
@@ -32,7 +53,7 @@ const ContactPage = () => {
 
       <div className="flex mt-10">
         <div className="flex flex-col lg:flex-row w-full gap-10">
-          <form className="w-full flex-[1]">
+          <form onSubmit={sendEmail} className="w-full flex-[1]" ref={formRef}>
             <div className="gap-3">
               <div className="mb-4">
                 <label
@@ -43,12 +64,10 @@ const ContactPage = () => {
                 </label>
                 <input
                   type="text"
-                  id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  placeholder="Write your name"
                   required
-                  className="appearance-none w-full p-4 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300"
+                  className="name appearance-none w-full p-4 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300"
                 />
               </div>
 
@@ -61,12 +80,10 @@ const ContactPage = () => {
                 </label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  placeholder="Write your email"
                   required
-                  className="appearance-none w-full p-4 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300"
+                  className="email appearance-none w-full p-4 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300"
                 />
               </div>
             </div>
@@ -79,21 +96,18 @@ const ContactPage = () => {
                 Message
               </label>
               <textarea
-                id="message"
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
+                placeholder="Write your message"
                 required
-                className="appearance-none w-full p-4 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300 resize-none h-40"
+                className="message appearance-none w-full p-4 outline-none text-gray-700  border border-gray-300 focus:border-gray-600 duration-300 resize-none h-40"
               />
             </div>
-            <button
-              onClick={handleSubmit}
+            <input
+              required
               className="bg-black hover:opacity-80 text-white py-5 px-10 uppercase duration-300"
               type="submit"
-            >
-              Submit
-            </button>
+              value="Submit"
+            />
           </form>
 
           <div className="right flex flex-col gap-5 flex-[1]">
