@@ -103,7 +103,7 @@ const ContactPage = () => {
             </div>
             <input
               required
-              className="bg-black hover:opacity-80 text-white py-5 px-10 uppercase duration-300"
+              className="bg-black hover:opacity-80 text-white py-5 px-10 uppercase duration-300 cursor-pointer"
               type="submit"
               value="Submit"
             />
