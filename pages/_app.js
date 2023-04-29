@@ -21,10 +21,8 @@ export default function App({ Component, pageProps }) {
           name="keywords"
           content="Euphoria, clothing, fashion, online shopping, women's clothing, men's clothing"
         />
-        <meta name="author" content="Euphoria Clothing Co." />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.euphoria.com/" />
       </Head>
+      {/* DO NOT TOUCH ANYTHING BELOW */}
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ToastContainer />

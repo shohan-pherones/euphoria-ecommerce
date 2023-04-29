@@ -15,7 +15,7 @@ const ContactPage = () => {
       .sendForm(serviceID, appTemplateId, formRef.current, appPublicId)
       .then(
         () => {
-          toast.success("Message Sent !", {
+          toast.success("Message Sent!", {
             position: "bottom-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -41,7 +41,6 @@ const ContactPage = () => {
       );
 
     //reset
-
     e.target.querySelector(".name").value = "";
     e.target.querySelector(".email").value = "";
     e.target.querySelector(".message").value = "";
