@@ -7,8 +7,9 @@ import { store, persistor } from "@/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { SessionProvider } from "next-auth/react";
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, session }) {
   return (
     <>
       <Head>
@@ -22,15 +23,17 @@ export default function App({ Component, pageProps }) {
           content="Euphoria, clothing, fashion, online shopping, women's clothing, men's clothing"
         />
       </Head>
-      {/* DO NOT TOUCH ANYTHING BELOW */}
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <ToastContainer />
-          <Navbar />
-          <Component {...pageProps} />
-          <Footer />
-        </PersistGate>
-      </Provider>
+
+      <SessionProvider session={session}>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <ToastContainer />
+            <Navbar />
+            <Component {...pageProps} />
+            <Footer />
+          </PersistGate>
+        </Provider>
+      </SessionProvider>
     </>
   );
 }

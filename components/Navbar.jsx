@@ -4,8 +4,11 @@ import { BsBag } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useSelector } from "react-redux";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session } = useSession();
+
   const products = useSelector((state) => state.myShop.products);
   const [toggleOpen, setToggleOpen] = useState(false);
 
@@ -71,9 +74,15 @@ const Navbar = () => {
       </nav>
 
       <div className="nav-links-right flex gap-5">
-        <Link href="/user/login" className="uppercase linear-walkaways">
-          Sign in
-        </Link>
+        {!session ? (
+          <Link href="/user/login" className="uppercase linear-walkaways">
+            Sign in
+          </Link>
+        ) : (
+          <Link href="/user/profile" className="uppercase linear-walkaways">
+            Profile
+          </Link>
+        )}
 
         <Link href="/cart" className="relative">
           <span>
