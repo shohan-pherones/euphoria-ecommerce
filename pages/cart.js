@@ -3,8 +3,15 @@ import { formatCurrency } from "@/utils/formatCurrency";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "@/components/CartItem";
 import { clearCart } from "@/store/productSlice";
+import { getSession } from "next-auth/react";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-const CartPage = () => {
+/* STRIPE PROMISE */
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+
+const CartPage = ({ session }) => {
   const products = useSelector((state) => state.myShop.products);
   const dispatch = useDispatch();
 
@@ -18,6 +25,26 @@ const CartPage = () => {
     const subtotal = formatCurrency(fixedTotal);
 
     return subtotal;
+  };
+
+  /* CHECKOUT SESSION */
+  const createCheckoutSession = async () => {
+    const stripe = await stripePromise;
+
+    // Call the backend to create a checkout session
+    const checkoutSession = await axios.post("/api/create-checkout-session", {
+      items: products,
+      email: session?.user?.email,
+    });
+
+    // Redirect user to stripe checkout
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
+
+    if (result.error) {
+      toast.error(result.error.message);
+    }
   };
 
   return (
@@ -85,8 +112,16 @@ const CartPage = () => {
               <p className="text-gray-400  max-[640px]:hidden">
                 Shipping cost will calculate at the checkout.
               </p>
-              <button className="checkout bg-cyan-500 w-full py-5 uppercase font-medium text-cyan-50 tracking-widest hover:bg-cyan-600 duration-300 text-center">
-                Proceed to checkout
+
+              <button
+                onClick={createCheckoutSession}
+                role="link"
+                disabled={!session}
+                className={`${
+                  !session ? "bg-gray-500 cursor-not-allowed" : ""
+                } bg-cyan-500 w-full py-5 uppercase font-medium text-cyan-50 tracking-widest hover:bg-cyan-600 duration-300 text-center`}
+              >
+                {!session ? "Sign in to checkout" : "Proceed to checkout"}
               </button>
             </div>
           </div>
@@ -97,3 +132,11 @@ const CartPage = () => {
 };
 
 export default CartPage;
+
+export const getServerSideProps = async (context) => {
+  const session = await getSession(context);
+
+  return {
+    props: { session },
+  };
+};
