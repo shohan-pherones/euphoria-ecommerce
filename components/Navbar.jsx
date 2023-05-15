@@ -55,11 +55,13 @@ const Navbar = () => {
               Women
             </Link>
           </li>
-          <li>
-            <Link href="/inventory" className="linear-walkaways">
-              Inventory
-            </Link>
-          </li>
+          {session && (
+            <li>
+              <Link href="/orders" className="linear-walkaways">
+                Orders
+              </Link>
+            </li>
+          )}
           <li>
             <Link href="/about" className="linear-walkaways">
               About
