@@ -20,3 +20,24 @@ model Product {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model User {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  email String @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  orders Order[]
+}
+
+model Order{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  transactionId String
+  amountTotal Float
+  amountShipping Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String @db.ObjectId
+  user User @relation(fields: [userId], references: [id])
+}

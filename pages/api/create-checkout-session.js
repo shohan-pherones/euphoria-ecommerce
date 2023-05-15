@@ -1,13 +1,13 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-async function CreateStripeSession(req, res) {
+async function createStripeSession(req, res) {
   const { items, email } = req.body;
 
   const transformedItems = items.map((item) => ({
     quantity: item.quantity,
     price_data: {
       currency: "USD",
-      unit_amount: item.price * 100,
+      unit_amount: +(item.price * 100).toFixed(2),
       product_data: {
         name: item.title,
         description: item.description,
@@ -76,4 +76,4 @@ async function CreateStripeSession(req, res) {
   res.status(200).json({ id: session.id });
 }
 
-export default CreateStripeSession;
+export default createStripeSession;
