@@ -16,7 +16,9 @@ const LoginPage = ({ session }) => {
 
   useEffect(() => {
     if (session) {
-      router.replace("/user/profile");
+      const destination = router.query.destination || "/user/profile";
+
+      router.replace(destination);
     }
   }, [session, router]);
 
@@ -48,9 +50,11 @@ export const getServerSideProps = async (context) => {
   const session = await getSession(context);
 
   if (session) {
+    const destination = context.query.destination || "/user/profile";
+
     return {
       redirect: {
-        destination: "/user/profile",
+        destination,
         permanent: false,
       },
     };
