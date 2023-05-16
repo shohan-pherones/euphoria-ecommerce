@@ -27,8 +27,8 @@ export default class Testimonials extends Component {
             <p>
               As an accountant, time is crucial for me. Thanks to Euphoria, I
               can now order all the office supplies I need with just a few
-              clicks. The website's user-friendly interface and quick delivery
-              saves me valuable time.
+              clicks. The user-friendly interface of the website and quick
+              delivery saves me valuable time.
             </p>
           </div>
         </div>
