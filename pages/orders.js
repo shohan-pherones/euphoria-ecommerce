@@ -52,11 +52,6 @@ const Orders = ({ session, customer }) => {
                   {format(new Date(order.createdAt), "dd/MM/yyyy")}
                 </td>
                 <td className="py-3">{order?.status?.toUpperCase()}</td>
-                <td>
-                  <button className="bg-rose-500 text-white uppercase py-1 px-3 hover:bg-rose-600 duration-300">
-                    Cancel Order
-                  </button>
-                </td>
               </tr>
             ))}
           </tbody>
