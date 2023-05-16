@@ -24,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-redux": "^8.0.5",
+    "react-responsive-carousel": "^3.2.23",
     "react-toastify": "^9.1.2",
     "redux-persist": "^6.0.0",
     "stripe": "^12.5.0"
