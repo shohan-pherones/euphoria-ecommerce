@@ -29,10 +29,10 @@ const ProfilePage = ({ session }) => {
     <div className="min-h-screen my-20 flex flex-col gap-5 items-center">
       <Image
         src={session.user.image}
-        width={50}
-        height={50}
+        width={500}
+        height={500}
         alt={session.user.name}
-        className="h-20 w-20 rounded-full border-2 border-gray-900"
+        className="h-32 w-32 rounded-full border-2 border-gray-900"
       />
       <h2 className="section-title">Welcome, {session.user.name}!</h2>
       <button
