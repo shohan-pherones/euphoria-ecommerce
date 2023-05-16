@@ -7,6 +7,7 @@ import { getSession } from "next-auth/react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 /* STRIPE PROMISE */
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
@@ -14,6 +15,7 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 const CartPage = ({ session }) => {
   const products = useSelector((state) => state.myShop.products);
   const dispatch = useDispatch();
+  const router = useRouter();
 
   /* SUBTOTAL CALCULATION */
   const total = () => {
@@ -29,6 +31,12 @@ const CartPage = ({ session }) => {
 
   /* CHECKOUT SESSION */
   const createCheckoutSession = async () => {
+    // If there is no session, user will redirect into login
+    if (!session) {
+      router.push("/user/login?destination=/cart");
+      return;
+    }
+
     const stripe = await stripePromise;
 
     // Call the backend to create a checkout session
@@ -112,14 +120,10 @@ const CartPage = ({ session }) => {
               <p className="text-gray-400  max-[640px]:hidden">
                 Shipping cost will calculate at the checkout.
               </p>
-
               <button
                 onClick={createCheckoutSession}
                 role="link"
-                disabled={!session}
-                className={`${
-                  !session ? "bg-gray-500 cursor-not-allowed" : ""
-                } bg-cyan-500 w-full py-5 uppercase font-medium text-cyan-50 tracking-widest hover:bg-cyan-600 duration-300 text-center`}
+                className="bg-cyan-500 w-full py-5 uppercase font-medium text-cyan-50 tracking-widest hover:bg-cyan-600 duration-300 text-center"
               >
                 {!session ? "Sign in to checkout" : "Proceed to checkout"}
               </button>

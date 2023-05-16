@@ -35,6 +35,7 @@ model Order{
   transactionId String
   amountTotal Float
   amountShipping Float
+  status String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

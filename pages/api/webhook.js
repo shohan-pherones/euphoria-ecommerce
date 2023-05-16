@@ -24,6 +24,7 @@ const fullfillOrder = async (session) => {
       transactionId: session.id,
       amountTotal: session.amount_total / 100,
       amountShipping: session.total_details.amount_shipping / 100,
+      status: "pending",
       user: {
         connect: { id: user.id },
       },
