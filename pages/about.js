@@ -37,7 +37,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mt-20">
       <div className="header">
         <Image
           priority

@@ -47,7 +47,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="my-20 wrapper min-h-screen">
+    <div className="my-20 wrapper min-h-screen mt-20">
       <h2 className="section-title">Contact Us</h2>
 
       <div className="flex mt-10">

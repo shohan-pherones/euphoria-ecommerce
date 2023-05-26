@@ -16,7 +16,7 @@ const HomePage = ({ products }) => {
   );
 
   return (
-    <div>
+    <div className="mt-20">
       <Slider />
       <Categories />
       <ProductsPage products={products} />
