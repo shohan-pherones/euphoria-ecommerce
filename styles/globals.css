@@ -61,14 +61,14 @@
 
 /* CATEGORIES */
 .sq-men {
-  background-image: url(https://cdn.pixabay.com/photo/2017/05/17/04/03/golden-apple-2319790_960_720.jpg);
+  background-image: url(https://res.cloudinary.com/dd68fmrvx/image/upload/v1685102558/e-commerce/mens-fashion_k5elcy.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   @apply flex-1 aspect-square flex items-center justify-center relative;
 }
 
 .sq-women {
-  background-image: url(https://cdn.pixabay.com/photo/2017/09/20/10/29/beautiful-2768032_960_720.jpg);
+  background-image: url(https://res.cloudinary.com/dd68fmrvx/image/upload/v1685102560/e-commerce/pexels-chloe-1004642_yrvbem.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   @apply flex-1 aspect-square flex items-center justify-center relative;
