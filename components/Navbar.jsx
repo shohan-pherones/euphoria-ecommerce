@@ -22,7 +22,7 @@ const Navbar = () => {
   }, [toggleOpen]);
 
   return (
-    <header className="wrapper h-20 flex items-center justify-between">
+    <header className="w-full h-20 flex items-center justify-between fixed z-50 top-0 left-0 bg-white px-5">
       <div className="logo">
         <Link href="/" className="text-2xl font-semibold">
           euphoria.

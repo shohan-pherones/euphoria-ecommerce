@@ -18,7 +18,9 @@ const ProductItem = ({ product }) => {
       <span className="uppercase text-xs tracking-widest font-semibold">
         {product.category}
       </span>
-      <h3 className="text-2xl font-ligh h-[4rem]">{product.title}</h3>
+      <h3 className="product-title text-2xl font-ligh h-[4rem]">
+        {product.title}
+      </h3>
       <p className="text-gray-500 h-[5rem]">
         {product.description?.split(".")[0]}.
       </p>

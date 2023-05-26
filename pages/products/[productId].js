@@ -20,7 +20,7 @@ const ProductDetails = ({ product }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="wrapper my-10 grid lg:grid-cols-2 gap-10">
+    <div className="wrapper my-10 grid lg:grid-cols-2 gap-10 mt-20">
       <Image
         priority
         unoptimized
