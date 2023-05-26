@@ -16,6 +16,15 @@
   @apply absolute -right-2 bottom-0 bg-black w-4 h-4 rounded-full flex justify-center items-center text-white text-xs;
 }
 
+.product-title {
+  transition: all 0.3s ease-out;
+}
+
+.product-title:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 /* HOME SLIDE */
 .cta-btn {
   @apply relative;
