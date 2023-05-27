@@ -19,10 +19,10 @@ const HomePage = ({ products }) => {
     <div className="mt-20">
       <Slider />
       <Categories />
-      <ProductsPage products={products} />
+      <ProductsPage products={products} isAddedInHomepage={true} />
       <Countdown endDate={endDate} />
-      <MenProductsPage products={menProducts} />
-      <WomenProductsPage products={womenProducts} />
+      <MenProductsPage products={menProducts} isAddedInHomepage={true} />
+      <WomenProductsPage products={womenProducts} isAddedInHomepage={true} />
       <Gallery />
     </div>
   );
