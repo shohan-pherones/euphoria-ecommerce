@@ -57,7 +57,7 @@ const data = [
 
 const Gallery = () => {
   return (
-    <div className="wrapper image-container my-20">
+    <div className="wrapper image-container my-20 overflow-x-hidden">
       <div className="text-center mb-10 flex flex-col gap-5">
         <span className="font-medium tracking-widest">{`LET'S SEE`}</span>
         <span className="section-title">GALLERY OF THE EUPHORIA</span>
