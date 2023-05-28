@@ -1,6 +1,7 @@
 import { ImageAbout } from "@/components/ImageAbout";
 import LogoItemForAbout from "@/components/LogoItemForAbout";
 import Image from "next/image";
+import { Parallax } from "react-parallax";
 
 const AboutPage = () => {
   const logos = [
@@ -39,24 +40,17 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen mt-20">
       <div className="header">
-        <Image
-          priority
-          unoptimized
-          loader={() =>
-            "https://images.pexels.com/photos/242829/pexels-photo-242829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
-          src={
-            "https://images.pexels.com/photos/242829/pexels-photo-242829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
-          width={50}
-          height={25}
-          alt={"Man Riding on Motorcycle"}
-          className="w-full h-[48rem] object-cover brightness-50"
-        />
-
-        <p className="text-center absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] uppercase font-extralight text-white text-8xl">
-          About Euphoria
-        </p>
+        <Parallax
+          className="w-full h-[calc(100vh-5rem)] object-cover brightness-[.6]"
+          bgImage="https://images.pexels.com/photos/242829/pexels-photo-242829.jpeg"
+          strength={225}
+        >
+          <div style={{ height: 500 }}>
+            <p className="text-center absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] uppercase font-extralight text-white text-8xl">
+              About Euphoria
+            </p>
+          </div>
+        </Parallax>
       </div>
 
       <div className="wrapper">
