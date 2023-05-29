@@ -10,6 +10,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Footer = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <footer className="text-gray-300 bg-black py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-20 wrapper w-full gap-16 md:gap-10 lg:gap-5 xl:gap-10 2xl:px-20 ">
@@ -102,7 +106,7 @@ const Footer = () => {
       <p
         className="copyright border-t border-gray-500/40 pt-20 text-gray-400 wrapper text-center uppercase"
         data-aos="zoom-in-up"
-        data-aos-duration="1500"
+        data-aos-duration="800"
         data-aos-delay="1300"
       >
         &copy; {new Date().getFullYear()} Euphoria. All rights reserved.
