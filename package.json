@@ -13,6 +13,7 @@
     "@prisma/client": "^4.12.0",
     "@reduxjs/toolkit": "^1.9.3",
     "@stripe/stripe-js": "^1.52.1",
+    "aos": "^2.3.4",
     "axios": "^1.4.0",
     "date-fns": "^2.30.0",
     "eslint": "8.37.0",
