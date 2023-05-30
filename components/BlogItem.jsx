@@ -12,21 +12,21 @@ const BlogItem = ({ blog }) => {
           <Image
             src={blog.imageUrl}
             alt={blog.title}
-            width={640}
-            height={360}
+            width={600}
+            height={600}
             priority
-            className="w-full h-full object-fill"
+            className="w-full h-full object-cover"
           />
         </div>
 
-        <div className="flex flex-col w-4/5 mx-10 justify-between py-10 text-red-600 lg:h-[24rem]  hover:text-white gap-2">
+        <div className="flex flex-col justify-center gap-5 w-4/5 mx-10 py-10 lg:h-[24rem]  hover:text-white">
           <div className="flex gap-5">
             <span className="font-semibold">{blog.tags}</span>
             <span className="font-normal text-base">
               Post on: {moment(blog.createdAt).format("DD MMM YY. hh:mm A")}
             </span>
           </div>
-          <h3 className="text-6xl font-ligh overflow-hidden">{blog.title}</h3>
+          <h3 className="text-6xl font-ligh">{blog.title}</h3>
           <p>{blog.author}</p>
         </div>
       </div>
