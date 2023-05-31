@@ -456,3 +456,7 @@
     border-radius: 50%;
   }
 }
+
+.blog-title {
+  background-image: url("https://images.pexels.com/photos/5792901/pexels-photo-5792901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
